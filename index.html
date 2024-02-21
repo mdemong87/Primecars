@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <div class="container">
-        <h1 class="heading">Prime cars</h1>
+        <h1 class="heading">Prime Cars</h1>
 
     <div class="allInputWrper">
         <div class="inputWrper">
@@ -117,16 +117,39 @@
                 :
             </span>
         </label>
-            <div class="cashCardWrper">
+            <!-- <div class="cashCardWrper">
                 <div>
-                    <input class="checkboxInputer" name="cash" type="checkbox" />
+                    <input id="cash" class="checkboxInputer" name="cash" type="checkbox" />
                     <label for="cash">Cash</label>
                 </div>
                 <div>
-                    <input class="checkboxInputer" name="card" type="checkbox" />
+                    <input id="card" class="checkboxInputer" name="card" type="checkbox" />
+                    <label for="card">Card</label>
+                </div>
+            </div> -->
+
+
+
+
+
+
+            <div class="cashCardWrper">
+                <div>
+                    <input id="cash" class="checkboxInputer" name="paymentMethod" type="radio" value="cash" />
+                    <label for="cash">Cash</label>
+                </div>
+                <div>
+                    <input id="card" class="checkboxInputer" name="paymentMethod" type="radio" value="card" />
                     <label for="card">Card</label>
                 </div>
             </div>
+            
+
+
+
+
+
+
         </div>
 
 
@@ -142,5 +165,25 @@
 
     </div>
     </div>
+
+
+
+    <script>
+        // Get all checkboxes with class 'checkboxInputer' within the 'cashCardWrper' div
+        const checkboxes = document.querySelectorAll('.cashCardWrper .checkboxInputer');
+    
+        // Add event listener to each checkbox
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                // Uncheck all checkboxes
+                checkboxes.forEach(function(cb) {
+                    if (cb !== checkbox) {
+                        cb.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>
